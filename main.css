@@ -242,3 +242,6 @@ div {
     padding: 12px;
     cursor: pointer;
 }
+.someClass {
+    background: #fc0;
+}
