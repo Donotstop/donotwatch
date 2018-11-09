@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    outline: none !important;
+}
+body {
+    background: #181719;
+    margin: 0;
+    padding: 0;
+}
+div {
+    position: relative;
+}
+.clockWrapper {
+    max-width: 600px;
+    margin: 50px auto;
+    transition: all 0.2s ease-out;
+}
+.clockWrapper.open {
+    filter: blur(7px);
+}
+.clockBox {
+    transition: all 0.3s ease-out;
+}
+.clockBox.shown {
+    transform: scale(1);
+}
+.clockBorder {
+    background: linear-gradient(135deg, #b7b7b7, #2c2c2c);
+    height: 600px;
+    border-radius: 50%;
+    padding: 14px;
+}
+.clockBackground {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 6px 7px 22px -7px rgba(0, 0, 0, 0.61) inset;
+    border: 6px solid #fff;
+}
+.clockSing {
+    margin-top: 25%;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+.clockName {
+    font-size: 28px;
+    letter-spacing: 10px;
+}
+.clockSlogan {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin-top: 10px;
+}
+.clockMarkup {
+    height: 100%;
+    border-radius: 50%;
+}
+.clockArrows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.clockMarkup > div {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: calc(50% - 1.5px);
+    transform: rotate(0deg);
+}
+.clockMarkup > div::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    top: 0;
+    left: 15px;
+    background: #777;
+}
+.clockMarkup > div::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    top: 0;
+    right: 15px;
+    transform: rotate(0deg);
+    background: #777;
+}
+.line1 {
+    transform: rotate(30deg) !important;
+}
+.line2 {
+    transform: rotate(60deg) !important;
+}
+.line3 {
+    transform: rotate(90deg) !important;
+}
+.line4 {
+    transform: rotate(120deg) !important;
+}
+.line5 {
+    transform: rotate(150deg) !important;
+}
+.hour {
+    width: 100%;
+    height: 10px;
+    top: calc(50% - 5px);
+    position: absolute;
+}
+.hour:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 38%;
+    height: 10px;
+    background: #222;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    margin-right: 12%;
+}
+.hour:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #222;
+    top: -5px;
+    right: calc(50% - 10px);
+    border-radius: 50%;
+}
+.minute {
+    width: 100%;
+    height: 8px;
+    top: calc(50% - 4px);
+    position: absolute;
+    transform: rotate(-90deg);
+}
+.minute:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 43%;
+    height: 8px;
+    background: #444;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    margin-right: 7%;
+}
+.minute:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #444;
+    top: -4px;
+    right: calc(50% - 8px);
+    border-radius: 50%;
+}
+.second {
+    width: 100%;
+    height: 6px;
+    top: calc(50% - 3px);
+    position: absolute;
+    transform: rotate(-90deg);
+}
+.second:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 48%;
+    height: 6px;
+    background: #940000;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    margin-right: 2%;
+}
+.second:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #940000;
+    top: -3px;
+    right: calc(50% - 6px);
+    border-radius: 50%;
+}
+.stopButton {
+    width: 200px;
+    margin: 35px auto;
+    color: #797979;
+    background: rgba(51, 51, 51, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 1px solid #000;
+    box-shadow: inset 0px 1px 0 0 #434343;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.stopButton:hover {
+    background: rgba(51, 51, 51, 0.32);
+}
+.modalBackground {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.74);
+    height: 100%;
+    padding: 16%;
+    font-size: 32px;
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 0.2s ease-out;
+}
+.modalBackground.open {
+    opacity: 1;
+    z-index: 1;
+    filter: blur(0);
+}
+.modalButton {
+    max-width: 300px;
+    margin: 10px auto;
+    font-size: 16px;
+    border-radius: 30px;
+    background: rgba(255, 235, 59, 0.25);
+    padding: 12px;
+    cursor: pointer;
+}
